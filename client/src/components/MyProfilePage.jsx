@@ -3,19 +3,31 @@ import axios from 'axios';
 
 function MyProfilePage() {
     const [profile, setProfile] = useState(null);
+    const accessToken = localStorage.getItem('accessToken');
 
     useEffect(() => {
+        if (!accessToken) {
+            // Handle case where access token is not available
+            console.error('Access token not found in local storage.');
+            return;
+        }
+
         fetchProfile();
-    }, []);
+    }, [accessToken]); // Fetch profile whenever the access token changes
 
     const fetchProfile = async () => {
         try {
-            const response = await axios.get('https://university-dashboard-f6fd.onrender.com/user/profile'); // Assuming the endpoint to fetch profile data is '/api/profile'
+            const response = await axios.get('https://university-dashboard-f6fd.onrender.com/user/profile', {
+                headers: {
+                    Authorization: `Bearer ${accessToken}`,
+                },
+            });
             setProfile(response.data);
         } catch (error) {
             console.error('Error fetching profile:', error);
         }
     };
+
 
     return (
         <div>

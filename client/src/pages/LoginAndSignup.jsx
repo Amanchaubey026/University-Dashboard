@@ -25,7 +25,12 @@ function LoginAndSignup() {
 
   const fetchStreams = async () => {
     try {
-      const response = await axios.get("https://university-dashboard-f6fd.onrender.com/user/streams/get");
+      const token = localStorage.getItem("accessToken");
+      const response = await axios.get("https://university-dashboard-f6fd.onrender.com/user/streams/get", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       setStreams(response.data);
     } catch (error) {
       console.error("Error fetching streams:", error);
@@ -34,7 +39,12 @@ function LoginAndSignup() {
 
   const fetchSubjects = async () => {
     try {
-      const response = await axios.get("https://university-dashboard-f6fd.onrender.com/user/subjects/get");
+      const token = localStorage.getItem("accessToken");
+      const response = await axios.get("https://university-dashboard-f6fd.onrender.com/user/subjects/get", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       setSubjects(response.data);
     } catch (error) {
       console.error("Error fetching subjects:", error);

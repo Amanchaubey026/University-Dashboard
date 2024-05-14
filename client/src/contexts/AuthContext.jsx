@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState, createContext } from "react";
 import axios from "axios";
+import {  useNavigate } from "react-router-dom";
 
 const userRes = {
   isAuth: false,
@@ -10,6 +11,7 @@ const userRes = {
 export const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
+    const navigate = useNavigate()
   const [isLoggedIn, setLoggedIn] = useState(userRes);
 
   const handleLogin = async ({ email, password }) => {
@@ -23,7 +25,12 @@ export const AuthContextProvider = ({ children }) => {
           isAuth: true,
           token: res.data.accessToken
         });
-        localStorage.setItem("accessToken", res.data.accessToken);
+        localStorage.setItem("accessToken", res.data.token);
+        console.log(res.data);
+        if(isLoggedIn.isAuth){
+            alert('login Successful !')
+           navigate('/studentdashboard')
+        }
       }
     } catch (error) {
       console.log(error);
