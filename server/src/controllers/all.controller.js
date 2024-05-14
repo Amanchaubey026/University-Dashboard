@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const User = require("../models/user.schema");
+const { Student, Marks, Subject, Stream } = require("../models/student.schema");
 require("dotenv").config();
 
 //Student Controller
@@ -58,16 +59,16 @@ const performance = async (req, res) => {
   }
 };
 
-const profile = async (req, res) => {
+const profile = async (req, res) => { 
   try {
-    const student = await Student.findById(req.userId).select("-password");
+    const student = await User.findById(req.userId).select("-password"); 
     if (!student) {
       return res.status(404).json({ message: "Student not found" });
     }
     res.status(200).json(student);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Internal Server Error" });
+    res.status(500).json({ message: "Internal server error" });
   }
 };
 //Admin Controller
