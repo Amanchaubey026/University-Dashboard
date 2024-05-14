@@ -9,7 +9,7 @@ function StreamsPage() {
     // Function to fetch existing streams from the backend
     const fetchStreams = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/user/streams');
+            const response = await axios.get('https://university-dashboard-f6fd.onrender.com/user/streams');
             setStreams(response.data);
         } catch (error) {
             console.error('Error fetching streams:', error);
@@ -23,7 +23,7 @@ function StreamsPage() {
 
     const addStream = async (newStream) => {
         try {
-            await axios.post('http://localhost:3000/user/streams/add', newStream);
+            await axios.post('https://university-dashboard-f6fd.onrender.com/user/streams/add', newStream);
             fetchStreams(); // Refresh streams after adding
         } catch (error) {
             console.error('Error adding stream:', error);
@@ -33,7 +33,7 @@ function StreamsPage() {
     // Function to delete a stream
     const deleteStream = async (streamId) => {
         try {
-            await axios.delete(`http://localhost:3000/user/streams/delete/${streamId}`);
+            await axios.delete(`https://university-dashboard-f6fd.onrender.com/user/streams/delete/${streamId}`);
             fetchStreams(); // Refresh streams after deleting
         } catch (error) {
             console.error('Error deleting stream:', error);

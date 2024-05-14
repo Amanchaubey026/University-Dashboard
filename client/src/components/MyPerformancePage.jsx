@@ -10,7 +10,7 @@ function MyPerformancePage() {
 
     const fetchPerformance = async () => {
         try {
-            const response = await axios.get('/api/performance'); // Assuming the endpoint to fetch performance data is '/api/performance'
+            const response = await axios.get('https://university-dashboard-f6fd.onrender.com/user/performance'); // Assuming the endpoint to fetch performance data is '/api/performance'
             setPerformance(response.data);
         } catch (error) {
             console.error('Error fetching performance:', error);

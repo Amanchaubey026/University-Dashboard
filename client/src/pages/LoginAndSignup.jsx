@@ -21,7 +21,7 @@ function LoginAndSignup() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3000/user/login", {
+      const response = await axios.post("https://university-dashboard-f6fd.onrender.com/user/login", {
         email: formData.email,
         password: formData.password,
       });
@@ -46,7 +46,7 @@ function LoginAndSignup() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3000/user/signup",
+        "https://university-dashboard-f6fd.onrender.com/user/signup",
         formData
       );
       console.log(response); // Handle successful signup

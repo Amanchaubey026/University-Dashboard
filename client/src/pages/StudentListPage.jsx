@@ -12,7 +12,7 @@ function StudentListPage() {
 
     const fetchStudents = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/user/studentList');
+            const response = await axios.get('https://university-dashboard-f6fd.onrender.com/user/studentList');
             setStudents(response.data);
         } catch (error) {
             console.error('Error fetching students:', error);

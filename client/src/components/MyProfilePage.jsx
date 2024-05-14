@@ -10,7 +10,7 @@ function MyProfilePage() {
 
     const fetchProfile = async () => {
         try {
-            const response = await axios.get('/api/profile'); // Assuming the endpoint to fetch profile data is '/api/profile'
+            const response = await axios.get('https://university-dashboard-f6fd.onrender.com/user/profile'); // Assuming the endpoint to fetch profile data is '/api/profile'
             setProfile(response.data);
         } catch (error) {
             console.error('Error fetching profile:', error);

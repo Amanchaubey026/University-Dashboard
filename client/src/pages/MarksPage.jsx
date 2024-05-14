@@ -13,7 +13,7 @@ function MarksPage() {
 
     const fetchMarks = async () => {
         try {
-            const response = await axios.get('/http://localhost:3000/user/marks');
+            const response = await axios.get('https://university-dashboard-f6fd.onrender.com/user/marks');
             setMarks(response.data);
         } catch (error) {
             console.error('Error fetching marks:', error);
@@ -22,7 +22,7 @@ function MarksPage() {
 
     const addMarks = async (newMark) => {
         try {
-            await axios.post('http://localhost:3000/user/marks/add', newMark);
+            await axios.post('https://university-dashboard-f6fd.onrender.com/user/marks/add', newMark);
             fetchMarks();
         } catch (error) {
             console.error('Error adding marks:', error);
@@ -31,7 +31,7 @@ function MarksPage() {
 
     const deleteMarks = async (markId) => {
         try {
-            await axios.delete(`http://localhost:3000/user/marks/delete/${markId}`);
+            await axios.delete(`https://university-dashboard-f6fd.onrender.com/user/marks/delete/${markId}`);
             fetchMarks();
         } catch (error) {
             console.error('Error deleting marks:', error);

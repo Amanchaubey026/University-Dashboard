@@ -9,7 +9,7 @@ function SubjectsPage() {
     // Function to fetch existing subjects from the backend
     const fetchSubjects = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/user/subjects');
+            const response = await axios.get('https://university-dashboard-f6fd.onrender.com/user/subjects');
             setSubjects(response.data);
         } catch (error) {
             console.error('Error fetching subjects:', error);
@@ -24,7 +24,7 @@ function SubjectsPage() {
     // Function to add a new subject
     const addSubject = async (newSubject) => {
         try {
-            await axios.post('http://localhost:3000/user/subjects/add', newSubject);
+            await axios.post('https://university-dashboard-f6fd.onrender.com/user/subjects/add', newSubject);
             fetchSubjects(); // Refresh subjects after adding
         } catch (error) {
             console.error('Error adding subject:', error);
@@ -34,7 +34,7 @@ function SubjectsPage() {
     // Function to delete a subject
     const deleteSubject = async (subjectId) => {
         try {
-            await axios.delete(`http://localhost:3000/user/subjects/delete/${subjectId}`);
+            await axios.delete(`https://university-dashboard-f6fd.onrender.com/user/subjects/delete/${subjectId}`);
             fetchSubjects(); // Refresh subjects after deleting
         } catch (error) {
             console.error('Error deleting subject:', error);
