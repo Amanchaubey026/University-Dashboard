@@ -1,18 +1,18 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const User = require("../models/user.schema");
 const { Student, Marks, Subject, Stream } = require("../models/student.schema");
+const { blacklistModel } = require("../models/balcklist.schema");
 require("dotenv").config();
 
 //Student Controller
 const Register = async (req, res) => {
   const { username, email, password, role } = req.body;
   try {
-    let existingUser = await User.findOne({ email });
+    let existingUser = await Student.findOne({ email });
     if (existingUser) {
       return res.status(400).send({ message: "Student already exist" });
     }
-    const student = new User({
+    const student = new Student({
       username,
       email,
       password: await bcrypt.hash(password, 10),
@@ -28,7 +28,7 @@ const Register = async (req, res) => {
 const Login = async (req, res) => {
   const { email, password } = req.body;
   try {
-    let user = await User.findOne({ email });
+    let user = await Student.findOne({ email });
     if (!user) {
       return res.status(404).send({ message: "student not found" });
     }
@@ -36,9 +36,9 @@ const Login = async (req, res) => {
     if (!valid) {
       return res.status(401).send("Invalid Credentials");
     }
-    const jwt_payload = { id: user._id, };
+    const jwt_payload = { id: user._id,email,role:user.role };
     const token = jwt.sign(jwt_payload, process.env.JWT_SECRET, {
-      expiresIn: "5hr",
+      expiresIn: "1hr",
     });
     res.status(200).send({ message: "Login successful", token });
   } catch (error) {
@@ -47,9 +47,29 @@ const Login = async (req, res) => {
   }
 };
 
-const performance = async (req, res) => {
+const logout = async (req, res) => {
   try {
-    const studentMarks = await Mark.find({ studentName: req.userId }).populate(
+    const { token } = req.headers; 
+    const existingToken = await blacklistModel.findOne({ token });
+    if (existingToken) {
+      return res.status(400).json({ message: 'Token already blacklisted' });
+    }
+
+    const blacklistEntry = new blacklistModel({ token });
+    await blacklistEntry.save();
+
+    res.status(200).json({ message: 'Logout successful' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+};
+
+
+const performance = async (req, res) => {
+  
+  try {
+    const studentMarks = await Marks.find({ studentName: req.id }).populate(
       "subject"
     );
     res.status(200).json(studentMarks);
@@ -61,7 +81,7 @@ const performance = async (req, res) => {
 
 const profile = async (req, res) => { 
   try {
-    const student = await User.findById(req.userId).select("-password"); 
+    const student = await Student.findById(req.userId).select("-password"); 
     if (!student) {
       return res.status(404).json({ message: "Student not found" });
     }
@@ -191,6 +211,7 @@ const studentList = async (req, res) => {
 module.exports = {
   Register,
   Login,
+  logout,
   performance,
   profile,
   streamAdd,
