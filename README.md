@@ -50,9 +50,6 @@ Backend:  https://university-dashboard-f6fd.onrender.com
 
 
 ## Images
-![Screenshot (1025)](https://github.com/Amanchaubey026/University-Dashboard/assets/98681520/079052ff-8be4-4451-beba-4dcfed354e80)
-<br/>
-<br/>
 ![Screenshot (1026)](https://github.com/Amanchaubey026/University-Dashboard/assets/98681520/147e2069-04cf-4229-bf3d-177c601dd0b7)
 <br/>
 <br/>
