@@ -49,12 +49,23 @@ Backend:  https://university-dashboard-f6fd.onrender.com
 
 
 
-## Credentials
-In order to be able to access the Admin Dashboard, enter these credentials in the Login Page :
-```bash
-Email: ranjiv@gmail.com
-Password: 1234
-```
+## Images
+![Screenshot (1025)](https://github.com/Amanchaubey026/University-Dashboard/assets/98681520/079052ff-8be4-4451-beba-4dcfed354e80)
+<br/>
+<br/>
+![Screenshot (1026)](https://github.com/Amanchaubey026/University-Dashboard/assets/98681520/147e2069-04cf-4229-bf3d-177c601dd0b7)
+<br/>
+<br/>
+![Screenshot (1027)](https://github.com/Amanchaubey026/University-Dashboard/assets/98681520/9b8fb659-07b3-45de-9add-4ef15c573877)
+<br/>
+<br/>
+![Screenshot (1028)](https://github.com/Amanchaubey026/University-Dashboard/assets/98681520/ca0dafaf-bdca-4fcd-aa43-b5b0d31d2f39)
+<br/>
+<br/>
+![Screenshot (1031)](https://github.com/Amanchaubey026/University-Dashboard/assets/98681520/98736afb-5404-474a-8a13-812d469bab60)
+
+<br/>
+<br/>
 
 ## Features
 - Secure user registration and authentication
