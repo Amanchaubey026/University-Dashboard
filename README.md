@@ -50,7 +50,16 @@ Backend:  https://university-dashboard-f6fd.onrender.com
 
 
 ## Images
-![Screenshot (1026)](https://github.com/Amanchaubey026/University-Dashboard/assets/98681520/147e2069-04cf-4229-bf3d-177c601dd0b7)
+![Screenshot (1034)](https://github.com/Amanchaubey026/University-Dashboard/assets/98681520/308b294c-0a62-4c75-b792-ab2eb278f506)
+<br/>
+<br/>
+![Screenshot (1035)](https://github.com/Amanchaubey026/University-Dashboard/assets/98681520/cb8cf9df-9cef-4d4a-8660-296f22c9b322)
+
+<br/>
+<br/>
+
+![Screenshot (1036)](https://github.com/Amanchaubey026/University-Dashboard/assets/98681520/bd17f50d-c867-4e62-b2f1-54156dea8a4f)
+
 <br/>
 <br/>
 ![Screenshot (1027)](https://github.com/Amanchaubey026/University-Dashboard/assets/98681520/9b8fb659-07b3-45de-9add-4ef15c573877)
@@ -61,8 +70,7 @@ Backend:  https://university-dashboard-f6fd.onrender.com
 <br/>
 ![Screenshot (1031)](https://github.com/Amanchaubey026/University-Dashboard/assets/98681520/98736afb-5404-474a-8a13-812d469bab60)
 
-<br/>
-<br/>
+
 
 ## Features
 - Secure user registration and authentication
