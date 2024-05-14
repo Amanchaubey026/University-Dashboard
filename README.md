@@ -101,7 +101,6 @@ npm run server
 - Database: MongoDB
 - Other: Mongoose, bcrypt, JWT
 
-## Contributors
 EventSpark is a collabrative project. Meet our collaborators:
 
 
