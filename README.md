@@ -62,12 +62,17 @@ Backend:  https://university-dashboard-f6fd.onrender.com
 
 <br/>
 <br/>
+
 ![Screenshot (1027)](https://github.com/Amanchaubey026/University-Dashboard/assets/98681520/9b8fb659-07b3-45de-9add-4ef15c573877)
+
 <br/>
 <br/>
+
 ![Screenshot (1028)](https://github.com/Amanchaubey026/University-Dashboard/assets/98681520/ca0dafaf-bdca-4fcd-aa43-b5b0d31d2f39)
+
 <br/>
 <br/>
+
 ![Screenshot (1031)](https://github.com/Amanchaubey026/University-Dashboard/assets/98681520/98736afb-5404-474a-8a13-812d469bab60)
 
 
