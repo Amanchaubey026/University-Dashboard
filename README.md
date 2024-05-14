@@ -39,14 +39,12 @@ EventSpark/<br>
 
 
 ## Deployed App
-Frontend: https://eventspark.netlify.app/  </br>
-Backend:  https://eventspark-ldbp.onrender.com/
+Frontend: https://university-dashboard-001.netlify.app/  </br>
+Backend:  https://university-dashboard-f6fd.onrender.com
 
 <br/>
 <br/>
 
-## Video Walkthrough of the project
-[![VIDEO](https://github.com/Renuka19990/EventSpark/assets/154539617/83621b9e-fb59-492a-9ecb-13082c23aa5b)](https://youtu.be/fEFdT0dGB2M)
 
 
 
