@@ -18,13 +18,11 @@ EventSpark/<br>
 │  ├─ routes/<br>
 │  ├─ index.js<br>
 │  └─ package.json<br>
-└─ EventSpark/<br>
+└─ client/<br>
 |&nbsp;&nbsp;&nbsp;├─ public/<br>
 |&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├─ vite.svg/<br>
 |&nbsp;&nbsp;&nbsp;├─ src/<br>
-|&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├─ Admin/<br>
 |&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├─ components/<br>
-|&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├─ EventPage/<br>
 |&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├─ Pages/<br>
 |&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├─ routes/<br>
 |&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├─ App.js<br>
