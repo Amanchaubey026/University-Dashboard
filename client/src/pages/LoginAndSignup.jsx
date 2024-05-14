@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function LoginAndSignup() {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("login");
   const [formData, setFormData] = useState({
     username: "",
@@ -9,11 +11,11 @@ function LoginAndSignup() {
     password: "",
     role: "student",
   });
-  const [errors, setErrors] = useState({}); // State for form errors
+  const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    setErrors({ ...errors, [e.target.name]: "" }); // Clear error on change
+    setErrors({ ...errors, [e.target.name]: "" });
   };
 
   const handleLogin = async (e) => {
@@ -23,9 +25,19 @@ function LoginAndSignup() {
         email: formData.email,
         password: formData.password,
       });
-      console.log(response); // Handle successful login (e.g., store token, redirect)
+
+      const { token, role } = response.data;
+
+      localStorage.setItem('accessToken', token);
+      localStorage.setItem('userRole', role);
+
+      if (role === "student") {
+        navigate("/studentdashboard");
+      } else if (role === "admin") {
+        navigate("/admindashboard");
+      }
     } catch (error) {
-      setErrors({ ...errors, form: "Invalid credentials" }); // General form error
+      setErrors({ ...errors, form: "Invalid credentials" });
       console.error(error);
     }
   };
@@ -40,9 +52,9 @@ function LoginAndSignup() {
       console.log(response); // Handle successful signup
     } catch (error) {
       if (error.response && error.response.data) {
-        setErrors(error.response.data); // Set specific field errors from backend
+        setErrors(error.response.data);
       } else {
-        setErrors({ ...errors, form: "Signup failed" }); // General form error
+        setErrors({ ...errors, form: "Signup failed" });
       }
     }
   };
@@ -69,7 +81,6 @@ function LoginAndSignup() {
           </button>
         </div>
 
-        {/* Forms */}
         {activeTab === "login" ? (
           <form onSubmit={handleLogin}>
             <div className="mb-4">

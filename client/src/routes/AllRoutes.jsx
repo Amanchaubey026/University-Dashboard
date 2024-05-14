@@ -7,6 +7,7 @@ import SubjectsPage from '../pages/SubjectsPage'
 import MarksPage from '../pages/MarksPage'
 import StudentListPage from '../pages/StudentListPage'
 import StudentDashboard from '../pages/StudentDashboard'
+import AdminDashBoard from '../pages/AdminDashBoard'
 
 const AllRoutes = () => {
   return (
@@ -19,7 +20,7 @@ const AllRoutes = () => {
         <Route path='/marks' element={<MarksPage/>}/>
         <Route path='/student-list' element={<StudentListPage/>}/>
         <Route path='/studentdashboard' element={<StudentDashboard/>}/>
-        
+        <Route path='/admindashboard' element={<AdminDashBoard/>}/>
       </Routes>
       <Footer/>
     </div>

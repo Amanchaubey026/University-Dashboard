@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import  { useState } from 'react';
+import { useState } from 'react';
 
 function AddMarksForm({ addMarks }) {
     const [formData, setFormData] = useState({

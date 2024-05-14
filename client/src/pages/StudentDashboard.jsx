@@ -5,7 +5,7 @@ import MyProfilePage from "../components/MyProfilePage"
 
 const StudentDashboard = () => {
   return (
-    <div>
+    <div className="h-screen">
       <MyProfilePage/>
       <MyPerformancePage/>
     </div>
