@@ -1,55 +1,65 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+/* eslint-disable react/prop-types */
+import { useState, useContext, useEffect } from "react";
 import axios from "axios";
+import { AuthContext } from "../contexts/AuthContext";
 
 function LoginAndSignup() {
-  const navigate = useNavigate();
+  const { handleLogin, handleSignup } = useContext(AuthContext);
   const [activeTab, setActiveTab] = useState("login");
   const [formData, setFormData] = useState({
     username: "",
     email: "",
     password: "",
     role: "student",
+    stream: "",
+    subject: "",
   });
   const [errors, setErrors] = useState({});
+  const [streams, setStreams] = useState([]);
+  const [subjects, setSubjects] = useState([]);
+
+  useEffect(() => {
+    fetchStreams();
+    fetchSubjects();
+  }, []);
+
+  const fetchStreams = async () => {
+    try {
+      const response = await axios.get("https://university-dashboard-f6fd.onrender.com/user/streams/get");
+      setStreams(response.data);
+    } catch (error) {
+      console.error("Error fetching streams:", error);
+    }
+  };
+
+  const fetchSubjects = async () => {
+    try {
+      const response = await axios.get("https://university-dashboard-f6fd.onrender.com/user/subjects/get");
+      setSubjects(response.data);
+    } catch (error) {
+      console.error("Error fetching subjects:", error);
+    }
+  };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     setErrors({ ...errors, [e.target.name]: "" });
   };
 
-  const handleLogin = async (e) => {
+  const handleLoginSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://university-dashboard-f6fd.onrender.com/user/login", {
-        email: formData.email,
-        password: formData.password,
-      });
-
-      const { token, role } = response.data;
-
-      localStorage.setItem('accessToken', token);
-      localStorage.setItem('userRole', role);
-
-      if (role === "student") {
-        navigate("/studentdashboard");
-      } else if (role === "admin") {
-        navigate("/admindashboard");
-      }
+      await handleLogin({ email: formData.email, password: formData.password });
     } catch (error) {
       setErrors({ ...errors, form: "Invalid credentials" });
       console.error(error);
     }
   };
 
-  const handleSignup = async (e) => {
+  const handleSignupSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        "https://university-dashboard-f6fd.onrender.com/user/signup",
-        formData
-      );
-      console.log(response); // Handle successful signup
+      await handleSignup(formData);
     } catch (error) {
       if (error.response && error.response.data) {
         setErrors(error.response.data);
@@ -82,7 +92,7 @@ function LoginAndSignup() {
         </div>
 
         {activeTab === "login" ? (
-          <form onSubmit={handleLogin}>
+          <form onSubmit={handleLoginSubmit}>
             <div className="mb-4">
               <label htmlFor="email">Email</label>
               <input
@@ -124,7 +134,7 @@ function LoginAndSignup() {
             </div>
           </form>
         ) : (
-          <form onSubmit={handleSignup}>
+          <form onSubmit={handleSignupSubmit}>
             <div className="mb-4">
               <label htmlFor="username">Username</label>
               <input
@@ -165,6 +175,47 @@ function LoginAndSignup() {
               />
               {errors.password && (
                 <p className="text-red-500 text-xs italic">{errors.password}</p>
+              )}
+            </div>
+            <div className="mb-4">
+              <label htmlFor="stream">Stream</label>
+              <select
+                id="stream"
+                name="stream"
+                value={formData.stream}
+                onChange={handleChange}
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              >
+                <option value="">Select Stream</option>
+                <option value="Science">Science</option>
+                <option value="Commerce">Commerce</option>
+                {streams.map((stream) => (
+                  <option key={stream._id} value={stream._id}>{stream.name}</option>
+                ))}
+              </select>
+              {errors.stream && (
+                <p className="text-red-500 text-xs italic">{errors.stream}</p>
+              )}
+            </div>
+            <div className="mb-4">
+              <label htmlFor="subject">Subject</label>
+              <select
+                id="subject"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              >
+                <option value="">Select Subject</option>
+                <option value="Maths">Maths</option>
+                <option value="Biology">Biology</option>
+                <option value="Computer Science">Computer Science</option>
+                {subjects.map((subject) => (
+                  <option key={subject._id} value={subject._id}>{subject.name}</option>
+                ))}
+              </select>
+              {errors.subject && (
+                <p className="text-red-500 text-xs italic">{errors.subject}</p>
               )}
             </div>
             {errors.form && (

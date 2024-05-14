@@ -207,6 +207,32 @@ const studentList = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+const streamGet = async (req, res) => {
+  try {
+    const streams = await Stream.find();
+    res.json(streams);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+const subjectGet = async (req, res) => {
+  try {
+    const subjects = await Subject.find();
+    res.json(subjects);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+const marksGet = async (req, res) => {
+  try {
+    const marks = await Marks.find().populate('studentName').populate('subject');
+    res.json(marks);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
 
 module.exports = {
   Register,
@@ -224,4 +250,7 @@ module.exports = {
   marksUpdate,
   marksDelete,
   studentList,
+  streamGet,
+  subjectGet,
+  marksGet,
 };
