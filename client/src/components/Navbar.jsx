@@ -21,16 +21,19 @@ function Navbar() {
                 </div>
                 <ul className={`md:flex ${isOpen ? "block" : "hidden"}`}>
                     <li className="mr-4">
-                        <Link to="/streams" className="text-white hover:text-gray-200">Streams</Link>
+                        <Link to="/streams" className="text-white hover:text-gray-200">STREAMS</Link>
                     </li>
                     <li className="mr-4">
-                        <Link to="/subjects" className="text-white hover:text-gray-200">Subjects</Link>
+                        <Link to="/subjects" className="text-white hover:text-gray-200">SUBJECTS</Link>
                     </li>
                     <li className="mr-4">
-                        <Link to="/marks" className="text-white hover:text-gray-200">Marks</Link>
+                        <Link to="/marks" className="text-white hover:text-gray-200">MARKS</Link>
                     </li>
                     <li>
-                        <Link to="/student-list" className="text-white hover:text-gray-200">Student List</Link>
+                        <Link to="/student-list" className="text-white hover:text-gray-200">STUDENT LIST</Link>
+                    </li>
+                    <li>
+                        <Link to="/studentdashboard" className="text-white hover:text-gray-200">STUDENT DASHBOARD</Link>
                     </li>
                 </ul>
             </div>
