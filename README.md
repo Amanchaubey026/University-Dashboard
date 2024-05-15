@@ -48,8 +48,8 @@ Backend:  https://university-dashboard-f6fd.onrender.com
 
 ##Admmin Credentials
 ```
-username: admin
-password : admin@gmail.com
+email: admin@gmail.com
+password : admin
 ```
 
 
