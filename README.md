@@ -46,36 +46,55 @@ Backend:  https://university-dashboard-f6fd.onrender.com
 <br/>
 
 
+##Admmin Credentials
+```
+email: admin@gmail.com
+password : admin
+```
 
 
 
 ## Images
-![Screenshot (1026)](https://github.com/Amanchaubey026/University-Dashboard/assets/98681520/147e2069-04cf-4229-bf3d-177c601dd0b7)
+![Screenshot (1034)](https://github.com/Amanchaubey026/University-Dashboard/assets/98681520/308b294c-0a62-4c75-b792-ab2eb278f506)
 <br/>
 <br/>
+![Screenshot (1035)](https://github.com/Amanchaubey026/University-Dashboard/assets/98681520/cb8cf9df-9cef-4d4a-8660-296f22c9b322)
+
+<br/>
+<br/>
+
+![Screenshot (1036)](https://github.com/Amanchaubey026/University-Dashboard/assets/98681520/bd17f50d-c867-4e62-b2f1-54156dea8a4f)
+
+<br/>
+<br/>
+
 ![Screenshot (1027)](https://github.com/Amanchaubey026/University-Dashboard/assets/98681520/9b8fb659-07b3-45de-9add-4ef15c573877)
+
 <br/>
 <br/>
+
 ![Screenshot (1028)](https://github.com/Amanchaubey026/University-Dashboard/assets/98681520/ca0dafaf-bdca-4fcd-aa43-b5b0d31d2f39)
-<br/>
-<br/>
-![Screenshot (1031)](https://github.com/Amanchaubey026/University-Dashboard/assets/98681520/98736afb-5404-474a-8a13-812d469bab60)
 
 <br/>
 <br/>
 
-## Features
-- Secure user registration and authentication
-- Personalizable user profiles with pictures and information
-- Ability to create, edit, and share posts with text, images, and links
-- Dynamic news feed displaying posts from friends and global Events
-- Event management features
-- Create management system
-- Event creation, editing, Deleting, and viewing
-- User search functionality
-- Customizable user settings
-- Responsive design across devices
-- Data security with encryption and secure connections
+![Screenshot (1033)](https://github.com/Amanchaubey026/University-Dashboard/assets/98681520/998e5e23-a950-4cb3-9b70-80ecab22e3bf)
+
+
+
+
+## Features:
+
+### Secure Registration and Authentication:
+- Robust authentication ensures secure access.
+
+### Academic Tools:
+- Access report cards, grades, and schedules.
+
+### Administrator Access:
+- Manage profiles, events, and content.
+- Monitor activity and enforce guidelines.
+
 
 ## Design Decisions or Assumptions
 The development focused on creating an intuitive and secure platform that emphasizes community building among food enthusiasts. Assumptions include a high engagement rate based on quality content and user-friendly features.
@@ -87,7 +106,7 @@ The development focused on creating an intuitive and secure platform that emphas
 ## Installation & Getting Started
 ```bash
 git 
-cd cliebt
+cd client
 npm install
 npm start
 cd ../server
@@ -101,7 +120,6 @@ npm run server
 - Database: MongoDB
 - Other: Mongoose, bcrypt, JWT
 
-EventSpark is a collabrative project. Meet our collaborators:
 
 
 
