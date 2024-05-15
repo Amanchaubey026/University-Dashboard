@@ -46,6 +46,11 @@ Backend:  https://university-dashboard-f6fd.onrender.com
 <br/>
 
 
+##Admmin Credentials
+```
+username: admin
+password : admin@gmail.com
+```
 
 
 
@@ -78,18 +83,16 @@ Backend:  https://university-dashboard-f6fd.onrender.com
 
 
 
-## Features
-- Secure user registration and authentication
-- Personalizable user profiles with pictures and information
-- Ability to create, edit, and share posts with text, images, and links
-- Dynamic news feed displaying posts from friends and global Events
-- Event management features
-- Create management system
-- Event creation, editing, Deleting, and viewing
-- User search functionality
-- Customizable user settings
-- Responsive design across devices
-- Data security with encryption and secure connections
+##Features:
+#Secure Registration and Authentication:
+-Robust authentication ensures secure access.
+
+#Academic Tools:
+-Access report cards, grades, and schedules.
+
+#Administrator Access:
+-Manage profiles, events, and content.
+Monitor activity and enforce guidelines.
 
 ## Design Decisions or Assumptions
 The development focused on creating an intuitive and secure platform that emphasizes community building among food enthusiasts. Assumptions include a high engagement rate based on quality content and user-friendly features.
