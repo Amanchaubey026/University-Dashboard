@@ -84,6 +84,7 @@ password : admin
 
 
 ##Features:
+
 #Secure Registration and Authentication:
 -Robust authentication ensures secure access.
 
