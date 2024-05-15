@@ -68,7 +68,8 @@ password : admin
 <br/>
 <br/>
 
-![Screenshot (1027)](https://github.com/Amanchaubey026/University-Dashboard/assets/98681520/9b8fb659-07b3-45de-9add-4ef15c573877)
+![image](https://github.com/Amanchaubey026/University-Dashboard/assets/98681520/b50b3375-f6aa-48e0-9c7b-f154c8775d5c)
+
 
 <br/>
 <br/>
