@@ -83,17 +83,18 @@ password : admin
 
 
 
-##Features:
+## Features:
 
-#Secure Registration and Authentication:
--Robust authentication ensures secure access.
+### Secure Registration and Authentication:
+- Robust authentication ensures secure access.
 
-#Academic Tools:
--Access report cards, grades, and schedules.
+### Academic Tools:
+- Access report cards, grades, and schedules.
 
-#Administrator Access:
--Manage profiles, events, and content.
-Monitor activity and enforce guidelines.
+### Administrator Access:
+- Manage profiles, events, and content.
+- Monitor activity and enforce guidelines.
+
 
 ## Design Decisions or Assumptions
 The development focused on creating an intuitive and secure platform that emphasizes community building among food enthusiasts. Assumptions include a high engagement rate based on quality content and user-friendly features.
@@ -105,7 +106,7 @@ The development focused on creating an intuitive and secure platform that emphas
 ## Installation & Getting Started
 ```bash
 git 
-cd cliebt
+cd client
 npm install
 npm start
 cd ../server
@@ -119,7 +120,6 @@ npm run server
 - Database: MongoDB
 - Other: Mongoose, bcrypt, JWT
 
-EventSpark is a collabrative project. Meet our collaborators:
 
 
 
