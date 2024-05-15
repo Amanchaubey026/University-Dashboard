@@ -26,10 +26,17 @@ export const AuthContextProvider = ({ children }) => {
           token: res.data.accessToken
         });
         localStorage.setItem("accessToken", res.data.token);
+        localStorage.setItem("role", res.data.role);
         console.log(res.data);
         if(isLoggedIn.isAuth){
             alert('login Successful !')
-           navigate('/studentdashboard')
+            if(res.data.role ==='student'){
+
+                navigate('/studentdashboard')
+            }
+            else{
+                navigate('/studentdashboard')
+            }
         }
       }
     } catch (error) {

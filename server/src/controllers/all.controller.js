@@ -49,15 +49,31 @@ const Login = async (req, res) => {
 
 const logout = async (req, res) => {
   try {
-    const { token } = req.headers; 
+    // Extract the token from the Authorization header
+    const authHeader = req.headers["authorization"];
+    // Check if the Authorization header exists
+    if (!authHeader) {
+      return res.status(401).json({ message: "Authorization header missing" });
+    }
+
+    // Split the Authorization header to get the token (assuming the format "Bearer <token>")
+    const token = authHeader.split(" ")[1];
+    // Check if token is provided
+    if (!token) {
+      return res.status(401).json({ message: "Token not provided" });
+    }
+
+    // Check if the token is already blacklisted
     const existingToken = await blacklistModel.findOne({ token });
     if (existingToken) {
       return res.status(400).json({ message: 'Token already blacklisted' });
     }
 
+    // If token is not blacklisted, add it to the blacklist
     const blacklistEntry = new blacklistModel({ token });
     await blacklistEntry.save();
 
+    // Return success message
     res.status(200).json({ message: 'Logout successful' });
   } catch (error) {
     console.error(error);
